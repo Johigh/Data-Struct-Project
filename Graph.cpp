@@ -75,16 +75,15 @@ void Graph::addEdge(std::string label1, std::string label2, unsigned long weight
     vertices[label2].neighbors.push_back(e2);
 }
 
-void Graph::removeEdge(std::string label1,
-                       std::string label2) {
+void Graph::removeEdge(std::string label1, std::string label2) {
     if (vertices.find(label1) == vertices.end() ||
         vertices.find(label2) == vertices.end()) {
         return;
     }
 
-    // Remove label2 from label1's neighbor list
+    //remove label2 from label1's neighbor list
     std::vector<Edge> &nbrs1 = vertices[label1].neighbors;
-    for (int i = 0; i < (int)nbrs1.size(); /* no ++ here */) {
+    for (int i = 0; i < (int)nbrs1.size();) {
         if (nbrs1[i].to == label2) {
             nbrs1.erase(nbrs1.begin() + i);
         } else {
@@ -92,9 +91,9 @@ void Graph::removeEdge(std::string label1,
         }
     }
 
-    // Remove label1 from label2's neighbor list
+    //remove label1 from label2's neighbor list
     std::vector<Edge> &nbrs2 = vertices[label2].neighbors;
-    for (int i = 0; i < (int)nbrs2.size(); /* no ++ here */) {
+    for (int i = 0; i < (int)nbrs2.size();) {
         if (nbrs2[i].to == label1) {
             nbrs2.erase(nbrs2.begin() + i);
         } else {
@@ -103,14 +102,11 @@ void Graph::removeEdge(std::string label1,
     }
 }
 
-unsigned long Graph::shortestPath(std::string startLabel,
-                                  std::string endLabel,
-                                  std::vector<std::string> &path) {
+unsigned long Graph::shortestPath(std::string startLabel, std::string endLabel, std::vector<std::string> &path) {
     path.clear();
 
-    // If either vertex is missing, we cannot find a path
-    if (vertices.find(startLabel) == vertices.end() ||
-        vertices.find(endLabel) == vertices.end()) {
+    //cannot find path if start or end do not exist
+    if (vertices.find(startLabel) == vertices.end() || vertices.find(endLabel) == vertices.end()) {
         return std::numeric_limits<unsigned long>::max();
     }
 

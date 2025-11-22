@@ -8,7 +8,7 @@
 #include "GraphBase.hpp"
 #include "MinPriorityQueue.hpp"
 
-// Simple graph class that uses an adjacency list
+//Simple graph class that uses an adjacency list
 class Graph : public GraphBase {
 public:
     Graph();
