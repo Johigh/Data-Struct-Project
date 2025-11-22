@@ -59,11 +59,11 @@ void Graph::addEdge(std::string label1, std::string label2, unsigned long weight
     std::vector<Edge> &nbrs1 = vertices[label1].neighbors;
     for (int i = 0; i < (int)nbrs1.size(); i++) {
         if (nbrs1[i].to == label2) {
-            return; // edge already there
+            return; //edge already there
         }
     }
 
-    // Undirected edge: add in both directions
+    //undirected edge add in both directions
     Edge e1;
     e1.to = label2;
     e1.weight = weight;
