@@ -3,6 +3,7 @@
 #include <limits>
 #include <unordered_set>
 
+//no intialization needed as vertices auto initializes to empty map
 Graph::Graph() {
 }
 
@@ -10,7 +11,7 @@ Graph::~Graph() {
 }
 
 void Graph::addVertex(std::string label) {
-    // Only add if it does not already exist
+    //only add if it does not already exist
     if (vertices.find(label) == vertices.end()) {
         Vertex v;
         v.label = label;
