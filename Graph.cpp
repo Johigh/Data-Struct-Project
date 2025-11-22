@@ -117,12 +117,12 @@ unsigned long Graph::shortestPath(std::string startLabel, std::string endLabel, 
 
     const unsigned long INF = std::numeric_limits<unsigned long>::max();
 
-    // Distance and predecessor maps
+    //distance and predecessor maps
     std::unordered_map<std::string, unsigned long> dist;
     std::unordered_map<std::string, std::string> prev;
     std::unordered_set<std::string> visited;
 
-    // Set all distances to INF
+    //set all distances to INF
     for (auto &pair : vertices) {
         dist[pair.first] = INF;
     }
@@ -135,6 +135,7 @@ unsigned long Graph::shortestPath(std::string startLabel, std::string endLabel, 
     startNode.label = startLabel;
     pq.push(startNode);
 
+    //main dijkstra loop
     while (!pq.empty()) {
         PQNode current = pq.top();
         pq.pop();
@@ -148,12 +149,14 @@ unsigned long Graph::shortestPath(std::string startLabel, std::string endLabel, 
 
         visited.insert(u);
 
-        // Once we reach the end label, we can stop
+        //stop once end label is reached
         if (u == endLabel) {
             break;
         }
 
-        // Go through all neighbors
+        /*relax edges*/
+
+        //go through all neighbors
         std::vector<Edge> &nbrs = vertices[u].neighbors;
         for (int i = 0; i < (int)nbrs.size(); i++) {
             std::string v = nbrs[i].to;
@@ -181,11 +184,11 @@ unsigned long Graph::shortestPath(std::string startLabel, std::string endLabel, 
     }
 
     if (dist[endLabel] == INF) {
-        // No path found
+        //no path found
         return INF;
     }
 
-    // Reconstruct the path from endLabel back to startLabel
+    //reconstruct the path from endLabel back to startLabel
     std::vector<std::string> reversePath;
     std::string currentLabel = endLabel;
 
@@ -195,9 +198,9 @@ unsigned long Graph::shortestPath(std::string startLabel, std::string endLabel, 
             break;
         }
 
-        // Move to the previous vertex
+        //move to the previous vertex
         if (prev.find(currentLabel) == prev.end()) {
-            // something went wrong
+            //something went wrong
             path.clear();
             return INF;
         }
@@ -205,7 +208,7 @@ unsigned long Graph::shortestPath(std::string startLabel, std::string endLabel, 
         currentLabel = prev[currentLabel];
     }
 
-    // Now reverse the vector so it goes start -> end
+    //reverse the vector so it goes start to end
     for (int i = (int)reversePath.size() - 1; i >= 0; i--) {
         path.push_back(reversePath[i]);
     }

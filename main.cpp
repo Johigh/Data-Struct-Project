@@ -5,11 +5,11 @@
 
 #include "Graph.hpp"
 
-// Simple main just to test the Graph and Dijkstra code
+//test the Graph and Dijkstra code
 int main() {
     Graph g;
 
-    // Add vertices 1 to 6 (as strings)
+    //add vertices 1 to 6 (as strings)
     std::vector<std::string> vertices;
     vertices.push_back("1");
     vertices.push_back("2");
@@ -22,7 +22,7 @@ int main() {
         g.addVertex(vertices[i]);
     }
 
-    // Add edges from the example in the assignment
+    //add edges from the example in the assignment
     std::vector< std::tuple<std::string, std::string, unsigned long> > edges;
     edges.push_back(std::make_tuple("1", "2", 7));
     edges.push_back(std::make_tuple("1", "3", 9));
@@ -41,7 +41,7 @@ int main() {
         g.addEdge(a, b, w);
     }
 
-    // Now find the shortest path from 1 to 5
+    //find the shortest path from 1 to 5
     std::vector<std::string> path;
     unsigned long distance = g.shortestPath("1", "5", path);
 
