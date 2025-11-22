@@ -6,7 +6,7 @@
 #include <unordered_map>
 
 #include "GraphBase.hpp"
-#include "MinPriorityQueue_1.hpp"
+#include "MinPriorityQueue.hpp"
 
 // Simple graph class that uses an adjacency list
 class Graph : public GraphBase {

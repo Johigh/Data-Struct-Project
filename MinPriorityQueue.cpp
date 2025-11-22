@@ -1,4 +1,4 @@
-#include "MinPriorityQueue_1.hpp"
+#include "MinPriorityQueue.hpp"
 
 MinPriorityQueue::MinPriorityQueue() {
 }

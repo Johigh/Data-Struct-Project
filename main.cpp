@@ -3,7 +3,7 @@
 #include <tuple>
 #include <string>
 
-#include "Graph_1.hpp"
+#include "Graph.hpp"
 
 // Simple main just to test the Graph and Dijkstra code
 int main() {
