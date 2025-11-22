@@ -45,14 +45,15 @@ int main() {
     std::vector<std::string> path;
     unsigned long distance = g.shortestPath("1", "5", path);
 
-    std::cout << "Shortest distance from 1 to 5: " << distance << std::endl;
-    std::cout << "Path: ";
+    std::cout << distance << std::endl;
+    std::cout << "{ ";
     for (int i = 0; i < (int)path.size(); i++) {
-        std::cout << path[i];
+        std::cout << "\"" << path[i] << "\"";
         if (i + 1 < (int)path.size()) {
-            std::cout << " -> ";
+            std::cout << ", ";
         }
     }
+    std::cout << " }" << std::endl;
     std::cout << std::endl;
 
     return 0;
