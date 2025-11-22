@@ -20,17 +20,19 @@ void Graph::addVertex(std::string label) {
 }
 
 void Graph::removeVertex(std::string label) {
-    // If vertex does not exist, nothing to do
+    //if vertex does not exist, nothing to do
     if (vertices.find(label) == vertices.end()) {
         return;
     }
 
-    // First remove any edges from other vertices that point to this one
+    //remove edges from other vertices that point to this one
     for (auto &pair : vertices) {
-        std::vector<Edge> &nbrs = pair.second.neighbors;
-        for (int i = 0; i < (int)nbrs.size(); /* no ++ here */) {
+        //get vertex's adjlist
+        std::vector<Edge> &nbrs = pair.second.neighbors; 
+        //erase changes indicies for manually with no i++
+        for (int i = 0; i < (int)nbrs.size(); ) {
             if (nbrs[i].to == label) {
-                // Erase this edge
+                //erase this edge
                 nbrs.erase(nbrs.begin() + i);
             } else {
                 i++;
@@ -38,23 +40,22 @@ void Graph::removeVertex(std::string label) {
         }
     }
 
-    // Now erase the vertex itself
+    //erase the vertex itself
     vertices.erase(label);
 }
 
-void Graph::addEdge(std::string label1,
-                    std::string label2,
-                    unsigned long weight) {
-    // No self loops and both vertices must exist
+void Graph::addEdge(std::string label1, std::string label2, unsigned long weight) {
+    //no self loops allowed
     if (label1 == label2) {
         return;
     }
+    //both vertices must exist
     if (vertices.find(label1) == vertices.end() ||
         vertices.find(label2) == vertices.end()) {
         return;
     }
 
-    // Check if edge already exists from label1 to label2
+    //check if edge already exists from label1 to label2
     std::vector<Edge> &nbrs1 = vertices[label1].neighbors;
     for (int i = 0; i < (int)nbrs1.size(); i++) {
         if (nbrs1[i].to == label2) {
