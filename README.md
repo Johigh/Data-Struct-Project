@@ -1,6 +1,6 @@
 # Data-Struct-Project
 ## COP 4530 Final Project: Dijkstra’s Algorithm
-John Bachta U#: 59139954
+John Bachta U#: 59139954\n
 Danae Ferguson U#: 33752946
 John Hightower U#: 05320833
 Elena Roussanova U#: 38647367
