@@ -1,9 +1,9 @@
 # Data-Struct-Project
 ## COP 4530 Final Project: Dijkstra’s Algorithm
-John Bachta U#: 59139954
-Danae Ferguson U#: 33752946
-John Hightower U#: 05320833
-Elena Roussanova U#: 38647367
+John Bachta U#: 59139954  
+Danae Ferguson U#: 33752946  
+John Hightower U#: 05320833  
+Elena Roussanova U#: 38647367  
 
 ### Overview
 This project implements a simple graph library in C++ that computes shortest paths using Dijkstra’s algorithm.
