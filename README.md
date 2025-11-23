@@ -18,7 +18,7 @@ Graph represented using an adjacency list
 Support for:
 - Adding/removing vertices
 - Adding/removing undirected weighted edges
-- Custom min-heap priority queue (no std::priority_queue)
+- Custom min-heap priority queue (no std::priority_queue)  
 Implementation of Dijkstra’s algorithm:
 - Returns the shortest distance between two labels
 - Fills a vector with the actual path (sequence of labels)
