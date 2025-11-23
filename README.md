@@ -13,7 +13,8 @@ The code is designed to work with a GraphBase interface provided by the course.
 The main deliverable is a Graph class and its shortestPath method, which finds the minimum-distance path between two vertices.
 
 ### Features
-Graph represented using an adjacency list
+Graph represented using an adjacency list  
+
 Support for:
 - Adding/removing vertices
 - Adding/removing undirected weighted edges
@@ -25,12 +26,12 @@ Implementation of Dijkstra’s algorithm:
 ### File Structure
 
 #### Code Files
-GraphBase.hpp – Interface provided by the instructor
-Graph.hpp / Graph.cpp – Implementation of the Graph class (including Dijkstra's shortestPath algorithm)
-MinPriorityQueue.hpp / MinPriorityQueue.cpp – Simple min-heap priority queue used by Dijkstra
-main.cpp – Test driver that builds a sample graph and calls shortestPath
-README.md – This file
+GraphBase.hpp – Interface provided by the instructor  
+Graph.hpp / Graph.cpp – Implementation of the Graph class (including Dijkstra's shortestPath algorithm)  
+MinPriorityQueue.hpp / MinPriorityQueue.cpp – Simple min-heap priority queue used by Dijkstra  
+main.cpp – Test driver that builds a sample graph and calls shortestPath  
+README.md – This file  
 
 #### Additional Files
-COPFinal_Project.pdf – Project report
-Dijkstra’s Algorithm.pdf – Slides for the project presentation
+COPFinal_Project.pdf – Project report  
+Dijkstra’s Algorithm.pdf – Slides for the project presentation  
